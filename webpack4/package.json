@@ -33,10 +33,6 @@
   },
   "dependencies": {
     "@babel/plugin-syntax-jsx": "^7.27.1",
-    "@module-federation/runtime": "^0.17.1",
-    "lodash": "^4.17.21",
-    "mf-webpack4": "^1.4.5",
-    "react": "^19.1.1",
-    "react-dom": "^19.1.1"
+    "@module-federation/runtime": "^0.17.1"
   }
 }

@@ -22,7 +22,7 @@ export default defineConfig({
       name: 'reactApp',
       filename: 'remoteEntry.js',
       exposes: {
-        './Homepage': './src/main.tsx',
+        './Homepage': './src/components/home/export-home.tsx',
       },
       manifest: true,
       shared: ['react', 'react-dom/client'],

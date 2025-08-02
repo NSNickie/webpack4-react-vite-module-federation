@@ -1,5 +1,5 @@
 import { createInstance } from "@module-federation/runtime";
-import React from "react";
+// import React from "react";
 
 // 模块联邦
 const mf = createInstance({
@@ -21,9 +21,4 @@ mf.registerRemotes([
   },
 ]);
 
-export default () => {
-  const Remote = React.lazy(async () => {
-    return mf.loadRemote("reactApp/Homepage");
-  });
-  return Remote
-};
+export default async () => mf.loadRemote("reactApp/Homepage");
