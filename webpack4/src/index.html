@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Webpack4 Web应用</title>
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🚀</text></svg>"
+    />
+  </head>
+  <body>
+    <script type="module">
+      import RefreshRuntime from 'http://localhost:5173/@react-refresh' // Adjust port if different
+      RefreshRuntime.injectIntoGlobalHook(window)
+      window.$RefreshReg$ = () => {}
+      window.$RefreshSig$ = () => (type) => type
+      window.__vite_plugin_react_preamble_installed__ = true
+    </script>
+    <div id="app">
+      <header class="header">
+        <h1>🚀 Webpack4 Web应用</h1>
+        <p>欢迎使用基于Webpack4构建的现代化Web应用</p>
+      </header>
+
+      <main class="main">
+        <div class="card">
+          <h2>功能特性</h2>
+          <ul>
+            <li>✅ Webpack4 构建系统</li>
+            <li>✅ Babel ES6+ 转译</li>
+            <li>✅ CSS 模块化处理</li>
+            <li>✅ 图片和字体资源处理</li>
+            <li>✅ 开发服务器热重载</li>
+            <li>✅ 生产环境优化</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h2>下面是一个由Module Federation构建的React应用</h2>
+          <div id="react-home"></div>
+        </div>
+
+        <div class="card">
+          <h2>开发命令</h2>
+          <div class="commands">
+            <code>npm start</code> - 启动开发服务器 <code>npm run dev</code> -
+            开发模式构建并监听 <code>npm run build</code> - 生产模式构建
+          </div>
+        </div>
+
+        <div class="card">
+          <h2>动态内容</h2>
+          <div id="dynamic-content">
+            <p>当前时间: <span id="current-time"></span></p>
+            <button id="update-btn" class="btn">更新时间</button>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <p>构建于 <span id="build-time"></span></p>
+      </footer>
+    </div>
+  </body>
+</html>
