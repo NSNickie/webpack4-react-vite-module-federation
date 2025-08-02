@@ -7,7 +7,7 @@ import { StyleProvider } from '@ant-design/cssinjs'
 import tailwindcssText from './index.css?inline'
 
 //使用Shadow DOM隔离样式
-const shadowRoot = document.getElementById('react-app')!.attachShadow({ mode: 'open' })
+const shadowRoot = document.getElementById('react-home')!.attachShadow({ mode: 'open' })
 const container = document.createElement('div');
 
 //注入Tailwindcss

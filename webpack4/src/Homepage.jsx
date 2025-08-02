@@ -25,9 +25,5 @@ export default () => {
   const Remote = React.lazy(async () => {
     return mf.loadRemote("reactApp/Homepage");
   });
-  return (
-    <React.Suspense fallback="Loading">
-      <Remote />
-    </React.Suspense>
-  );
+  return Remote
 };
