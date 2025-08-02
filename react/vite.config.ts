@@ -25,7 +25,6 @@ export default defineConfig({
         './Homepage': './src/components/home/export-home.tsx',
       },
       manifest: true,
-      shared: ['react', 'react-dom/client'],
     }),
   ],
   base: 'http://localhost:5173',

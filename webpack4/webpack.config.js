@@ -27,16 +27,6 @@ module.exports = (env, argv) => {
           }
         },
         {
-          test: /\.jsx/, // 支持 .js 和 .jsx
-          exclude: /node_modules/,
-          use: {
-            loader: 'babel-loader',
-            options: {
-              presets: ['@babel/preset-react']
-            }
-          },
-        },
-        {
           test: /\.css$/,
           use: [
             isProduction ? MiniCssExtractPlugin.loader : 'style-loader',

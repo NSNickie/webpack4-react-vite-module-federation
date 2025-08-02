@@ -3,7 +3,7 @@ import { formatTime } from "./utils/time";
 import { createLogger } from "./utils/logger";
 // import React from "react";
 // import ReactDOM from "react-dom/client";
-import RenderHomepageDOM from "./Homepage.jsx";
+import RenderHomepageDOM from "./Homepage.js";
 // import { StrictMode } from "react";
 
 // 创建日志记录器

@@ -21,4 +21,4 @@ mf.registerRemotes([
   },
 ]);
 
-export default async () => mf.loadRemote("reactApp/Homepage");
+export default mf

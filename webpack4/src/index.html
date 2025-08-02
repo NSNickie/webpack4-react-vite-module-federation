@@ -9,14 +9,15 @@
       href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🚀</text></svg>"
     />
   </head>
+  <script type="module">
+    import RefreshRuntime from 'http://localhost:5173/@react-refresh' // Adjust port if different
+    RefreshRuntime.injectIntoGlobalHook(window)
+    window.$RefreshReg$ = () => {}
+    window.$RefreshSig$ = () => (type) => type
+    window.__vite_plugin_react_preamble_installed__ = true
+  </script>
   <body>
-    <script type="module">
-      import RefreshRuntime from 'http://localhost:5173/@react-refresh' // Adjust port if different
-      RefreshRuntime.injectIntoGlobalHook(window)
-      window.$RefreshReg$ = () => {}
-      window.$RefreshSig$ = () => (type) => type
-      window.__vite_plugin_react_preamble_installed__ = true
-    </script>
+   
     <div id="app">
       <header class="header">
         <h1>🚀 Webpack4 Web应用</h1>
@@ -37,7 +38,7 @@
         </div>
 
         <div class="card">
-          <h2>下面是一个由Module Federation构建的React应用</h2>
+          <h2>下面是一个由Module Federation构建的React应用. 微前端万岁！</h2>
           <div id="react-home"></div>
         </div>
 
