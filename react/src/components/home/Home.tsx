@@ -3,6 +3,7 @@ import viteLogo from '/vite.svg'
 import { Button as AntdButton, Modal as AntdModal } from 'antd'
 import { Button as ShadcnButton } from '@/components/ui/button'
 import { useState } from 'react'
+import useStore from '@/stores'
 
 export default function Home() {
   const [isModalOpen, setIsModalOpen] = useState(false)
@@ -31,11 +32,7 @@ export default function Home() {
       </div>
       <h1>Home Page</h1>
       <div className="tw:flex tw:flex-col tw:gap-4">
-        <AntdButton
-          onClick={showModal}
-          type="primary"
-          className="tw:w-40"
-        >
+        <AntdButton onClick={showModal} type="primary" className="tw:w-40">
           Hello Antd!!
         </AntdButton>
         <AntdModal
@@ -51,7 +48,18 @@ export default function Home() {
         <ShadcnButton variant="outline" className="tw:w-40 tw:cursor-pointer">
           Hello Shadcn!
         </ShadcnButton>
-        <p className="tw:text-2xl">Powered with Tailwindcss</p>
+        <p>Zustand's bears: {useStore(state => state.bears)}</p>
+        <AntdButton
+          color="blue"
+          variant="solid"
+          className="tw:w-40 "
+          onClick={() => useStore.getState().increasePopulation()}
+        >
+          Increase Bears
+        </AntdButton>
+        <p className="tw:text-2xl">
+          Powered with Tailwindcss, pnpm, vite, zustand.
+        </p>
       </div>
       <p className="read-the-docs"></p>
     </>

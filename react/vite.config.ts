@@ -23,6 +23,7 @@ export default defineConfig({
       filename: 'remoteEntry.js',
       exposes: {
         './Homepage': './src/components/home/export-home.tsx',
+        './Header': './src/components/header/export-header.tsx',
       },
       manifest: true,
     }),

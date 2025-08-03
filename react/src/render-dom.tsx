@@ -30,11 +30,15 @@ export function RenderDOM<T extends object>({
   shadowRoot.appendChild(container)
   shadowRoot.appendChild(style)
 
-  const popupShadowRoot = initPopupShadowRoot()
+  const initedResult = initPopupShadowRoot()
 
   createRoot(container!).render(
     <StyleProvider container={shadowRoot}>
-      <ConfigProvider getPopupContainer={() => popupShadowRoot.getElementById('popup-root')!}>
+      <ConfigProvider
+        getPopupContainer={() =>
+          initedResult.popupShadowRoot.getElementById('popup-root')!
+        }
+      >
         <StrictMode>
           <Component id={mountId} {...props} />
         </StrictMode>
@@ -42,11 +46,23 @@ export function RenderDOM<T extends object>({
     </StyleProvider>
   )
   // 在 AntD 样式渲染完后 clone 样式到 popup 容器
-  observeAndCloneAntDStyles(shadowRoot, popupShadowRoot)
+  if (!initedResult.isInited) {
+    observeAndCloneAntDStyles(shadowRoot, initedResult.popupShadowRoot)
+  }
 }
 
-function initPopupShadowRoot(): ShadowRoot {
-  const overlayHost = document.createElement('div')
+function initPopupShadowRoot(): {
+  popupShadowRoot: ShadowRoot
+  isInited: boolean
+} {
+  let overlayHost = document.getElementById('overlay-container')
+  if (overlayHost) {
+    return {
+      popupShadowRoot: overlayHost.shadowRoot!,
+      isInited: true,
+    }
+  }
+  overlayHost = document.createElement('div')
   overlayHost.id = 'overlay-container'
   document.body.appendChild(overlayHost)
 
@@ -57,7 +73,10 @@ function initPopupShadowRoot(): ShadowRoot {
   popupRoot.id = 'popup-root'
   popupShadowRoot.appendChild(popupRoot)
 
-  return popupShadowRoot
+  return {
+    popupShadowRoot,
+    isInited: false,
+  }
 }
 
 function observeAndCloneAntDStyles(from: ShadowRoot, to: ShadowRoot) {
