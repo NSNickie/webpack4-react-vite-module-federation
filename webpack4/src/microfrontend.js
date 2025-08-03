@@ -1,7 +1,6 @@
 import { createInstance } from "@module-federation/runtime";
-// import React from "react";
 
-// 模块联邦
+// Module Federation
 const mf = createInstance({
   name: "mf_host",
   remotes: [

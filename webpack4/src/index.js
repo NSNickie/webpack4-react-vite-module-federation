@@ -1,10 +1,7 @@
 import "./styles/main.css";
 import { formatTime } from "./utils/time";
 import { createLogger } from "./utils/logger";
-// import React from "react";
-// import ReactDOM from "react-dom/client";
 import RenderHomepageDOM from "./Homepage.js";
-// import { StrictMode } from "react";
 
 // 创建日志记录器
 const logger = createLogger("App");
@@ -49,8 +46,6 @@ class App {
   }
 
   async loadRemoteApp() {
-    // console.log("----------------?------- ReactApp", ReactApp);con
-    // console.log("----------------------- Homepage", Homepage);
     await RenderHomepageDOM();
   }
 }
