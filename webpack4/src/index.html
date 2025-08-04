@@ -10,14 +10,13 @@
     />
   </head>
   <script type="module">
-    import RefreshRuntime from 'http://localhost:5173/@react-refresh' // Adjust port if different
-    RefreshRuntime.injectIntoGlobalHook(window)
-    window.$RefreshReg$ = () => {}
-    window.$RefreshSig$ = () => (type) => type
-    window.__vite_plugin_react_preamble_installed__ = true
+    import RefreshRuntime from "http://localhost:5173/@react-refresh"; // Adjust port if different
+    RefreshRuntime.injectIntoGlobalHook(window);
+    window.$RefreshReg$ = () => {};
+    window.$RefreshSig$ = () => (type) => type;
+    window.__vite_plugin_react_preamble_installed__ = true;
   </script>
   <body>
-   
     <div id="app">
       <header class="header">
         <h1>🚀 Webpack4 Web应用</h1>
@@ -38,7 +37,12 @@
         </div>
 
         <div class="card">
-          <h2>下面是一个由Module Federation构建的React应用. 微前端万岁！</h2>
+          <h2>下面是一个由Module Federation构建的React应用.</h2>
+          <div id="react-header"></div>
+        </div>
+
+        <div class="card">
+          <h2>微前端万岁！</h2>
           <div id="react-home"></div>
         </div>
 

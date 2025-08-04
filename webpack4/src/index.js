@@ -2,6 +2,7 @@ import "./styles/main.css";
 import { formatTime } from "./utils/time";
 import { createLogger } from "./utils/logger";
 import RenderHomepageDOM from "./Homepage.js";
+import RenderHeaderDOM from "./Header.js";
 
 // 创建日志记录器
 const logger = createLogger("App");
@@ -47,6 +48,7 @@ class App {
 
   async loadRemoteApp() {
     await RenderHomepageDOM();
+    await RenderHeaderDOM();
   }
 }
 
